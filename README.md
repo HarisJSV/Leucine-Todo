@@ -8,10 +8,13 @@ This project includes:
 - Slack integration to post task summaries. So we can view these summaries in slack channels.
 - Finally, Vercel deployement of the same.
 
-  ## Setup Instructions
 
-### Packages used:
+## Requirements:
 - Node.js (v18 or later)
+- - npm
+- A Slack workspace with access to create Incoming Webhooks and a webhook URL
+- A Cohere account and Cohere API Key
+- A Supabase account with Supabase URL and Supabase Key
 #### Backend Packages:
 - "@supabase/supabase-js": "^2.49.7",
 - "axios": "^1.9.0",
@@ -30,7 +33,26 @@ This project includes:
  -   "react-dom": "^19.1.0",
   -  "react-hot-toast": "^2.5.2",
   -  "styled-components": "^6.1.18"
-- npm
-- A Slack workspace with access to create Incoming Webhooks
-- A HuggingFace or similar LLM API key (if using remote models)
+
+  ## Slack and LLM setup:
+1) Setting up Supabase:
+   - Create a supabase account and a table with columns 'title' and 'completed'.
+   - Disable RLS on the sql editor with sql query such as 'ALTER TABLE todos DISABLE ROW LEVEL SECURITY;'. This is optional. If you want security, you can ignore. I disabled it to avoid errors and also since it's 
+     a low scale project.
+   - Copy your supabase url and key and store it in a env file to access them.
+2) Setting up Cohere:
+   - Create a cohere account and go to API keys.
+   - Copy the trial API key and store it on env file to access a cohere LLM of your choosing, I chose command-r-plus.
+   - After integrating the llm, prompt it according to your needs.
+3) Setting up Slack API:
+   - Create a slack account
+   - Create a slack workspace/app and name it
+   - Go to the app's settings, specifically features. You will come across 'Incoming Webhooks'.
+   - Copy the webhook URL and store it on your env file.
+   - But first, create a slack channel so the LLM could send the summaries to the bot/channel.
+   - Allow the channel access to you slack app.
+   - Post the summary using node via post request to webhook url.
+  
+  ## Setup Instructions:
+   
 
