@@ -54,5 +54,46 @@ This project includes:
    - Post the summary using node via post request to webhook url.
   
   ## Setup Instructions:
-   
+  1) git clone https://github.com/HarisJSV/Leucine-Todo.git
+  2) cd to the project directory
+  3) use 'npm install' on both backend and front end terminals, npm will install all dependencies using backend and frontend's respective package.json file.
+  4) npm run dev for frontend
+  5) nodemon index.js for backend. I used nodemon because it was much easier because I never had to manually restart my server for every change. (Optional to use nodemon).
+  6) I have included all the necessary variables in the .env.example file to seamlessly connect with your respective supabase, cohere accounts ,etc.
+
+## Design/Architecture decisions:
+1) Frontend Framework:
+- The application is built using React with Vite for fast development and optimized build performance.
+
+2) Styling:
+- Tailwind CSS is used for utility-first styling, enabling rapid UI development and consistent design.
+
+3) Task Views:
+- A dashboard layout is implemented to allow users to navigate between different views:
+
+->All Tasks
+
+->Completed Tasks
+
+->Pending Tasks
+
+4) Task Completion:
+- Task completion is managed via a checkbox, which updates the completed boolean column in the Supabase todos table.
+
+- When marked complete, the task title appears with a strikethrough effect.
+
+5)User Feedback:
+- The app uses toast notifications to provide real-time feedback for the following actions:
+
+  -> Adding a new task
+
+-> Deleting a task
+
+-> Editing a task
+
+->Sending a task summary to Slack channel (success or failure)
+
+6)Database:
+- Supabase is used as the backend database. Each task record includes a completed boolean field to track its status.
+
 
