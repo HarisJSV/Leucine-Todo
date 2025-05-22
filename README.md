@@ -8,7 +8,9 @@ This project includes:
 - Slack integration to post task summaries. So we can view these summaries in slack channels.
 - Finally, Vercel deployement of the same.
 
-
+##Vercel Link:
+- https://leucine-todo-khaki.vercel.app/
+  
 ## Requirements:
 - Node.js (v18 or later)
 - - npm
@@ -97,4 +99,5 @@ This project includes:
 - Supabase is used as the backend database. Each task record includes a completed boolean field to track its status.
 
 ![image](https://github.com/user-attachments/assets/ffb862c0-cc48-41fd-972f-900108981b82)
+
 
