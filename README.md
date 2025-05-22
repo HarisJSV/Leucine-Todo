@@ -12,8 +12,8 @@ This project includes:
 - https://leucine-todo-khaki.vercel.app/
   
 ## Requirements:
-- Node.js (v18 or later)
-- - npm
+- Node.js 
+- npm
 - A Slack workspace with access to create Incoming Webhooks and a webhook URL
 - A Cohere account and Cohere API Key
 - A Supabase account with Supabase URL and Supabase Key
