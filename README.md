@@ -96,4 +96,5 @@ This project includes:
 6)Database:
 - Supabase is used as the backend database. Each task record includes a completed boolean field to track its status.
 
+![image](https://github.com/user-attachments/assets/ffb862c0-cc48-41fd-972f-900108981b82)
 
